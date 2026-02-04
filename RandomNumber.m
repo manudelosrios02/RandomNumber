@@ -5,6 +5,26 @@ for k = 1:20    %% Este for sirve para comprobar la función random7
     disp(random7(random5))
 end
 
+N = 200000;                 % número de pruebas >10000
+v = zeros(N,1);
+
+for k = 1:N
+    v(k) = random7(random5);
+end
+
+% Conteo de frecuencias
+counts = histcounts(v, 0.5:1:7.5);   % 7 bins centrados en 1..7
+disp(counts)
+disp(counts / N)                     % proporciones
+
+% Gráfico
+figure;
+histogram(v, 0.5:1:7.5);
+xticks(1:7);
+xlabel('Valor');
+ylabel('Frecuencia');
+title('Distribución de random7');
+
 
 function x = random7(random5) %% Nueva función para generar número aleatorio del 1 al 7
    while true
