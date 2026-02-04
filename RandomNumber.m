@@ -5,6 +5,7 @@ for k = 1:20    %% Este for sirve para comprobar la función random7
     disp(random7(random5))
 end
 
+
 N = 200000;                 % número de pruebas >10000
 v = zeros(N,1);
 
